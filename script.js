@@ -1,12 +1,11 @@
 $(document).ready(function($){
-	var x=1000;
+	var y=10;
 	function render()
 	{
 
-	$("#word").css({"top":x+"px"});
-	setTimeout(render, 10);
-
-	
+	$("#word").css({"top":y+"px"});
+	y+=10;
+	setTimeout(render,100)
     }
 
 
