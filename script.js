@@ -1,64 +1,106 @@
 
 
-	var wordsBox=Array();
-	wordsBox[0]="Type";
-	var k=0;
-	var str1="";
-
+	var wordsBox=[];
+	wordsBox=[["type","raheem","ajnas"]];
+	var keyNum=0;
 	var str="";
+	var totalLetter=0;
+	var index=0;
 
-$(document).ready(function($){
+$(document).ready(function(){
 	
 	var y=10;
-	var speed=0.2;
-    str=wordsBox[0];
+	var speed=0.4;
 
-	$("#word").html(str);
-	$(document).keyup(function(x){
-		var z=x.keyCode;
-		var y = String.fromCharCode(z);
+	//if(str==="")
+    //str=wordsBox[0][0];
+
+	for(var i=0;i<wordsBox[0].length;i++)
+	{
+	$("#words").append(wordsBox[0][i]+"<br>");
+	totalLetter+=wordsBox[0][i].length;
+	}
 	
-		if(y===str[0].toUpperCase())
+	$(document).keyup(function(key){
+		
+
+
+		var letterValue=key.keyCode;
+		var letter = String.fromCharCode(letterValue);
+		if(str=="")
 		{
-
-			
-			if(k===wordsBox[0].length-1)
-			{
-				$("#end").html("You Won");
-				("#word").remove();
-							
-			}
-			
-
+		
+			for(var i=0;i<wordsBox[0].length;i++)
+				{
+					if(wordsBox[0][i][0].toUpperCase()===letter)
+    				{
+    				str=wordsBox[0][i];
+    				wordsBox[0].splice(i,1);
+    				$("#words").empty();
+    				$("#words").html(myFunction());
+    				}	
+    			}
+    	}
+		if(str!=="")
+		if(letter===str[0].toUpperCase())
+		{
 			var len = str.length;
 			str = str.substring(1,len);
-
-
+			$("#word").html(str);
+			keyNum++;
 
 		
-		$("#word").html(str);
-
-		k++;
+		}
 		
-	}
 
 	});
+	function myFunction()
+	{
+		for(var i=0;i<wordsBox[0].length;i++)
+			$(words).append(wordsBox[0][i]+"<br>");
+	}
 
 	function render()
 	{
 
+	$("#words").css({"top":y+"px"});
 	$("#word").css({"top":y+"px"});
+	
 	y+=speed;
-	setTimeout(render,10);	
+
+	if(keyNum==totalLetter)
+		gameWon();
+	else
+		if(y>600)
+			gameOver();
+
+	setTimeout(render,10);
+	}
+
+	
+
+	function gameWon()
+	{
+		{
+			$("#end").html("You Won");
+			$("#words").remove();
+			$("#word").remove();
+		}
+	}
     
 
-    if(y>600)
-    {
+    function gameOver()
+    {	
+
+   
     	$("#end").html("Game Over");
-    	$("#word").remove();
+    	$("#words").remove();
+   		$("#word").remove();
     	return;
+    
     }
-}
+
+	
 	window.addEventListener("load", function(){ 
 		render();
 		});

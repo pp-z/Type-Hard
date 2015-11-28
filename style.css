@@ -4,12 +4,19 @@
 	height: 600px;
 	width: 250px;
 }
+#words {
+  color: white;
+  position: absolute;
+  width:250px;
+  height:50px;
+}
 #word {
   color: yellow;
   position: absolute;
   width:250px;
   height:50px;
 }
+
 #end{
 	color:white;
 }
