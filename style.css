@@ -16,10 +16,11 @@ body {
 	padding:20px;
 }
 #scoreField {
-		margin-left:200px;
+		margin-top:-40px;
+		margin-left:-40px;
 		background-color:green;
 		color:red;
-		width:100px;
+		width:120px;
 		height:30px;
 }
 
