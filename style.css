@@ -1,22 +1,30 @@
-
+body {
+		background-color:black;
+	}
 #track {
-	background-color: black;
+	margin-left:450px;
+	background-color: gray;
 	height: 600px;
-	width: 250px;
+	width: 300px;
 }
 #words {
-  color: white;
-  position: absolute;
-  width:250px;
-  height:50px;
+	margin-left:100px;
+	color: white;
+	position: absolute;
+	width:250px;
+	height:50px;
+	padding:20px;
 }
-#word {
-  color: yellow;
-  position: absolute;
-  width:250px;
-  height:50px;
+#scoreField {
+		margin-left:200px;
+		background-color:green;
+		color:red;
+		width:100px;
+		height:30px;
 }
 
 #end{
+	margin-top:300px;
+	margin-left:50px;
 	color:white;
 }

@@ -1,24 +1,22 @@
-
-
-	var wordsBox=[];
-	wordsBox=[["type","raheem","ajnas"]];
+var wordsBox=[];
+	wordsBox=[{word:"Raheem", posX:20},{word:"Amazing", posX:30},{word:"queue", posX:40},{word:"Melbourne", posX:50}];
 	var keyNum=0;
-	var str="";
+	var str=null;
 	var totalLetter=0;
 	var index=0;
+	var j;
+	var l=0;
 
 $(document).ready(function(){
 	
 	var y=10;
 	var speed=0.4;
 
-	//if(str==="")
-    //str=wordsBox[0][0];
 
-	for(var i=0;i<wordsBox[0].length;i++)
+	for(var i=0;i<wordsBox.length;i++)
 	{
-	$("#words").append(wordsBox[0][i]+"<br>");
-	totalLetter+=wordsBox[0][i].length;
+	$("#words").append("<span>"+wordsBox[i].word+"</span><br>");
+	totalLetter+=wordsBox[i].word.length;
 	}
 	
 	$(document).keyup(function(key){
@@ -27,51 +25,71 @@ $(document).ready(function(){
 
 		var letterValue=key.keyCode;
 		var letter = String.fromCharCode(letterValue);
-		if(str=="")
+		if(l==0)
 		{
-		
-			for(var i=0;i<wordsBox[0].length;i++)
+			
+			for(var i=0;i<wordsBox.length;i++)
 				{
-					if(wordsBox[0][i][0].toUpperCase()===letter)
+					if(wordsBox[i].word[0].toUpperCase()===letter)
     				{
-    				str=wordsBox[0][i];
-    				wordsBox[0].splice(i,1);
-    				$("#words").empty();
-    				$("#words").html(myFunction());
+					//alert("new");
+					//alert(wordsBox[i].word);
+    				str=wordsBox[i].word;
+					l=str.length;
+					j=i;
+					//break;
+    				//wordsBox.splice(i,1);
+    							//wordsBox[i].word = wordsBox[i].word.substring(1,5);
+    				
     				}	
     			}
     	}
-		if(str!=="")
-		if(letter===str[0].toUpperCase())
+		if(l!=0)
 		{
-			var len = str.length;
-			str = str.substring(1,len);
-			$("#word").html(str);
-			keyNum++;
-
+		if(letter===str[0].toUpperCase())
 		
+		{	//alert(wordsBox[i]);
+			var len = str.length;
+			str=str.substring(1,len);
+			l--;
+			//alert(str);
+			wordsBox[j].word = (wordsBox[j].word).substring(1,len);
+			//alert(wordsBox[j].word);
+			if(l==0)
+				wordsBox.splice(j,1);	
+			$("#words").empty();
+			$("#words").html(myFunction());
+			//$("#word").html();
+			keyNum++;
+			$("#score").html(keyNum);
+			
+
+			
+		}
 		}
 		
 
 	});
 	function myFunction()
 	{
-		for(var i=0;i<wordsBox[0].length;i++)
-			$(words).append(wordsBox[0][i]+"<br>");
+		for(var i=0;i<wordsBox.length;i++)
+			$("#words").append("<span >"+wordsBox[i].word+"</span><br>");
+			
+		return;
 	}
 
 	function render()
 	{
 
 	$("#words").css({"top":y+"px"});
-	$("#word").css({"top":y+"px"});
+	//$("#word").css({"top":y+"px"});
 	
 	y+=speed;
 
-	if(keyNum==totalLetter)
+	if(y<=600 && keyNum==totalLetter)
 		gameWon();
 	else
-		if(y>600)
+		if(keyNum<totalLetter && y>600)
 			gameOver();
 
 	setTimeout(render,10);
