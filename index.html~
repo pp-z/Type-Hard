@@ -20,7 +20,7 @@
     				<div id="word"></div>
     		
 		</div>
-		<div id="scoreField" class="jumbotron"> <h4 id="scoreText">Score : <span id="score"></span><h4></div>
+		<div id="scoreField" class="jumbotron"> <h3 id="scoreText">Score : <span id="score"></span><h3></div>
 	</div>
 </body>
 

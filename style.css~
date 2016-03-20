@@ -35,7 +35,7 @@ body {
 	margin-left:42px;
 	color:white;
 }
-#scoreText {
+#score {
 	margin-top:-4px;
 	margin-left:10px;
 }
