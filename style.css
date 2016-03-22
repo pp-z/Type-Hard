@@ -2,17 +2,20 @@ body {
 		background-color:black;
 		background-image:url('bg.jpg');
 	}
+span {
+position: absolute;
+}
 #track {
 	display:inline-block;
 	position:absolute;
 	margin-left:450px;
 	margin-top:5px;
 	background-color: #233;
-	height: 600px;
+	height: 620px;
 	width: 300px;
 }
 #words {
-	margin-left:100px;
+	margin-left:40px;
 	color: white;
 	position: absolute;
 	width:250px;

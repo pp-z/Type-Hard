@@ -13,14 +13,14 @@
 </head>
 <body>
 	<div class=container>
-		<div  class="jumbotron" id="track">
+		<div  id="track">
 			<h1 id="end"></h1>
 
     			<div id="words"></div><br>
     				<div id="word"></div>
     		
 		</div>
-		<div id="scoreField" class="jumbotron"> <h3 id="scoreText">Score : <span id="score"></span><h3></div>
+		<div id="scoreField" class="jumbotron"> <h4 id="scoreText">Score : <span id="score"></span><h4></div>
 	</div>
 </body>
 

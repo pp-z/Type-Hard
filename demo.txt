@@ -1,5 +1,5 @@
 	var wordsBox=[];
-	wordsBox=[{word:"Raheem", posX:10, posY:10},{word:"Amazing", posX:50,posY:20},{word:"queue", posX:70,posY:10},{word:"Melbourne", posX:90,posY:30}];
+	wordsBox=[{word:"Raheem", posX:0, posY:5},{word:"Amazing", posX:50,posY:20},{word:"queue", posX:90,posY:2},{word:"Melbourne", posX:120,posY:40}];
 	var keyNum=0;
 	var str=null;
 	var totalLetter=0;

@@ -1,12 +1,11 @@
-	var wordsBox=[];
-	wordsBox=[{word:"Raheem", posX:10, posY:10},{word:"Amazing", posX:50,posY:20},{word:"queue", posX:70,posY:10},{word:"Melbourne", posX:90,posY:30}];
+var wordsBox=[];
+	wordsBox=[{word:"Raheem", posX:20},{word:"Amazing", posX:30},{word:"queue", posX:40},{word:"Melbourne", posX:50}];
 	var keyNum=0;
 	var str=null;
 	var totalLetter=0;
 	var index=0;
 	var j;
 	var l=0;
-  	var r=20
 
 $(document).ready(function(){
 	
@@ -16,8 +15,7 @@ $(document).ready(function(){
 
 	for(var i=0;i<wordsBox.length;i++)
 	{
-	//$("#words").append("<span>"+wordsBox[i].word+"</span><br>");
-	$('<span></span>').css({"left":wordsBox[i].posX+"px","top":wordsBox[i].posY+"px"}).html(wordsBox[i].word).appendTo('#words');
+	$("#words").append("<span>"+wordsBox[i].word+"</span><br>");
 	totalLetter+=wordsBox[i].word.length;
 	}
 	
@@ -41,7 +39,7 @@ $(document).ready(function(){
 					
     				}	
     			}
-    		}
+    	}
 		if(l!=0)
 		{
 		if(letter===str[0].toUpperCase())
@@ -66,18 +64,12 @@ $(document).ready(function(){
 		
 
 	});
-	
 	function myFunction()
 	{
-		for(var i=0;i<wordsBox.length;i++){
-
-			$('<span></span>').css({"left":wordsBox[i].posX+"px","top":wordsBox[i].posY+"px"}).html(wordsBox[i].word).appendTo('#words');
-
-			//$("#words").append("<span id='a'>"+wordsBox[i].word+"</span><br>");
-			//alert(wordsBox[i].posX);
-			//$("span").css({"left":wordsBox[i].posX+"px"});
+		for(var i=0;i<wordsBox.length;i++)
+			$("#words").append("<span>"+wordsBox[i].word+"</span><br>");
 			
-		}
+		return;
 	}
 
 	function render()
