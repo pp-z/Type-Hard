@@ -1,10 +1,10 @@
 	var wordsBox = [];
 	wordsBox = [
 	  [
-	    { word: "Raheem", posX: 0, posY: 5 },
-	    { word: "Amazing", posX: 50, posY: 20 },
-	    { word: "queue", posX: 90, posY: 2 },
-	    { word: "Melbourne", posX: 120, posY: 40 },
+	    { word: "Servicenow", posX: 0, posY: 5 },
+	    { word: "Amazone", posX: 50, posY: 20 },
+	    { word: "Google", posX: 90, posY: 2 },
+	    { word: "Facebook", posX: 120, posY: 40 },
 	  ],
 	  [
 	    { word: "except", posX: 0, posY: 5 },
